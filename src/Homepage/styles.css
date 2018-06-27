@@ -1,0 +1,7 @@
+.flexRow {
+  display: flex;
+}
+
+.alignedRight {
+  justify-content: flex-end;
+}
