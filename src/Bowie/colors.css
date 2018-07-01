@@ -1,0 +1,14 @@
+:root {
+  --red: #79342d;
+  --purple: #5f5e7b;
+  --black: #1f1b1d;
+  --beige: #b7a5a9;
+  --as-white: #ffffff;
+  --as-dark-red: rgb(189, 33, 27);
+  --as-red: rgb(205, 0,	0);
+  --as-purple: #5f5e7b;
+  --as-blue: rgb(44, 77,	140);
+  --as-light-blue: rgb(44, 77, 170);
+  --as-grey: rgb(177,	162, 167);
+  --as-black: #1f1b1d;
+}

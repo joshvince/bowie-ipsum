@@ -1,0 +1,16 @@
+#lorem-container {
+  padding: 2em;
+  width: 100%;
+}
+
+.lorem-text.ziggy-stardust {
+  color: green;
+}
+
+.lorem-text.aladdin-sane {
+  color: var(--as-red);
+}
+
+.lorem-text.thin-white-duke {
+  color: var(--as-black);
+}

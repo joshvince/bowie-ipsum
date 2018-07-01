@@ -1,0 +1,24 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 1em;
+  grid-row-gap: 1.6em;
+}
+
+.centered > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .full-width-box  {
+    grid-column: 1 / 3;
+  }
+
+}
