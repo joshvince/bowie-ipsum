@@ -1,0 +1,102 @@
+#selector-container {
+  margin-top: 1em;
+}
+
+.selector {
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  margin: 0;
+  font-size: 1.6em;
+  font-family: 'Didact Gothic', sans-serif;
+}
+
+.square {
+  height: 2.5em;
+  width: 2.5em;
+}
+
+.selector:focus, .selector.selected {
+  outline-style: none;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex-col-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.selector-label {
+  margin-bottom: 1em;
+}
+
+/* LENGTH SELECTORS */
+
+.length.selector {
+  border: none;
+  color: var(--as-dark-red);
+}
+
+.length.selector:hover, .length.selector:focus, .length.selector.selected {
+  color: var(--as-white);
+  border-color: var(--as-dark-red);
+  background-color: var(--as-dark-red);
+}
+
+/* ERA SELECTORS */
+
+.era.selector {
+  border: none;
+}
+
+.era.selector.aladdin-sane {
+  color: var(--as-dark-red);
+}
+
+.era.selector.aladdin-sane:focus, .era.selector.aladdin-sane:hover, .era.selector.aladdin-sane.selected {
+  color: var(--as-white);
+  background-color: var(--as-dark-red);
+}
+
+.era.selector.ziggy-stardust {
+  color: green;
+}
+
+.era.selector.ziggy-stardust:focus, .era.selector.ziggy-stardust:hover, .era.selector.ziggy-stardust.selected {
+  background-color: yellow;
+  color: green;
+}
+
+.era.selector.thin-white-duke {
+  color: var(--as-black);
+  background-color: white;
+}
+
+.era.selector.thin-white-duke:focus, .era.selector.thin-white-duke:hover, .era.selector.thin-white-duke.selected {
+  color: var(--as-white);
+  background-color: var(--as-black);
+}
+
+/* GENERATOR BUTTON */
+
+#generator-button {
+  height: 2.5em;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 800;
+  font-size: 1.6em;
+  border: none;
+  color: var(--as-white);
+  background-color: var(--as-blue);
+  margin: 1em;
+}
+
+#generator-button:hover, #generator-button:focus {
+  background-color: var(--as-light-blue);
+  outline: none;
+}

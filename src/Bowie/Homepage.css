@@ -1,0 +1,28 @@
+@import './colors.css';
+
+#page-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0;
+  background-color: var(--as-white);
+}
+
+.headline {
+  margin-top: 4em;
+  color: var(--as-dark-red);
+}
+
+h1 {
+  font-size: 3em;
+}
+
+.highlight {
+  color: var(--as-dark-red);
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 6em;
+  }
+
+}
