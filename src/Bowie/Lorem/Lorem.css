@@ -3,6 +3,10 @@
   width: 100%;
 }
 
+.lorem-text {
+  margin-bottom: 1em;
+}
+
 .lorem-text.ziggy-stardust {
   color: green;
 }
@@ -13,4 +17,29 @@
 
 .lorem-text.thin-white-duke {
   color: var(--as-black);
+}
+
+.song-list {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.song {
+  padding: 0.4em;
+  margin: 0.2em;
+  color: var(--as-white);
+}
+
+.song.ziggy-stardust {
+  background-color: green;
+}
+
+.song.aladdin-sane {
+  background-color: var(--as-red);
+}
+
+.song.thin-white-duke {
+  background-color: var(--as-black);
 }

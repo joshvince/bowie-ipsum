@@ -21,7 +21,7 @@ class Homepage extends Component {
   }
 
   generateLorem = (selectorResult) => {
-    let result = Generator(selectorResult.chars);
+    let result = Generator(selectorResult.chars, selectorResult.era);
     this.setState({
       showLorem: true,
       era: selectorResult.era,

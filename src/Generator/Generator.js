@@ -56,8 +56,9 @@ function generateText(currentText, charLimit, album, usedSongsList) {
   }
 }
 
-function generate(chars = 100) {
-  let randomAlbum = randomItem(words.albums);
+function generate(chars = 100, era = "ziggy-stardust") {
+  let selectedEra = words[era];
+  let randomAlbum = randomItem(selectedEra.albums);
   let result = generateText("", chars, randomAlbum, []);
   console.log(result);
   console.log("Number of characters: ", result.text.length)
