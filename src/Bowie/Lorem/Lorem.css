@@ -19,9 +19,19 @@
   color: var(--as-black);
 }
 
+::selection {
+  color: var(--as-blue);
+}
+
+.flex-col-end {
+  display: flex;
+  justify-content: space-between;
+}
+
 .song-list {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -29,17 +39,52 @@
 .song {
   padding: 0.4em;
   margin: 0.2em;
-  color: var(--as-white);
+  border: solid 2px;
 }
 
 .song.ziggy-stardust {
-  background-color: green;
+  color: green;
+  border-color: green;
 }
 
 .song.aladdin-sane {
-  background-color: var(--as-red);
+  color: var(--as-red);
+  border-color: var(--as-red);
 }
 
 .song.thin-white-duke {
-  background-color: var(--as-black);
+  color: var(--as-black);
+  border-color: var(--as-black);
+}
+
+
+.copy-button {
+  height: 2.5em;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 800;
+  font-size: 1.6em;
+  border: none;
+  color: var(--as-white);
+  background-color: var(--as-blue);
+  padding: 0 1em;
+  margin: 0 1em;
+  transition: background-color 0.5s ease-out;
+}
+
+@media only screen and (max-width: 768px) {
+  .song-list {
+    display: none;
+  }
+  .copy-button {
+    width: 100%;
+  }
+}
+
+.copy-button:hover, .copy-button:focus {
+  background-color: var(--as-light-blue);
+  outline: none;
+}
+
+.copy-button.Copied {
+  background-color: green;
 }

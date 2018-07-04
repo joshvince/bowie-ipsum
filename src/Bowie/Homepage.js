@@ -18,6 +18,12 @@ class Homepage extends Component {
       loremSongs: null,
       era: "aladdin-sane"
     }
+
+    this.loremRef = null;
+
+    this.setLoremRef = el => {
+      this.loremRef = el;
+    }
   }
 
   generateLorem = (selectorResult) => {
@@ -28,6 +34,7 @@ class Homepage extends Component {
       loremText: result.text,
       loremSongs: result.songs
     })
+    this.loremRef.scrollIntoView({behavior: "smooth"});
   }
 
   render() {
@@ -41,7 +48,7 @@ class Homepage extends Component {
             <p className="highlight">A David Bowie themed Lorem Ipsum generator</p>
           </div>
           <Selectors submitHandler={this.generateLorem}/>
-          <div className="full-width-box">
+          <div ref={this.setLoremRef} className="full-width-box">
             {this.state.showLorem ?
               <Lorem
                 loremText={this.state.loremText}
