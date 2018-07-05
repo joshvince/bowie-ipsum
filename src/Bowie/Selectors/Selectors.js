@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import {ThemeContext} from '../../theme-context';
+
 import LengthSelector from './LengthSelector';
 import EraSelector from './EraSelector';
 import GeneratorButton from './GeneratorButton';
@@ -74,64 +76,69 @@ class Selectors extends Component {
     let activeLength = this.state.selectedLength;
     let activeEra = this.state.selectedEra;
     return (
-      [
-        <div key={0}>
-          <div className="flex-col-center">
-            <p className="selector-label">Select Length</p>
-            <div>
-              <LengthSelector
-                length="short"
-                active={activeLength === "short"}
-                clickHandler={this.changeLength}
-                label="S"
-              />
-              <LengthSelector
-                length="medium"
-                active={activeLength === "medium"}
-                clickHandler={this.changeLength}
-                label="M"
-              />
-              <LengthSelector
-                length="long"
-                active={activeLength === "long"}
-                clickHandler={this.changeLength}
-                label="L"
+      <ThemeContext.Consumer>
+        {({theme, switchTheme}) => {
+          const textStyle = {color: theme.color};
+          return [
+            <div key={0}>
+              <div className="flex-col-center">
+                <p style={textStyle} className="selector-label">Select Era</p>
+                <div>
+                  <EraSelector
+                    active={theme.name === "ziggy-stardust"}
+                    eraType="ziggy-stardust"
+                    label="ZS"
+                    clickHandler={switchTheme}
+                  />
+                  <EraSelector
+                    active={theme.name === "aladdin-sane"}
+                    eraType="aladdin-sane"
+                    label="AS"
+                    clickHandler={switchTheme}
+                  />
+                  <EraSelector
+                    active={theme.name === "thin-white-duke"}
+                    eraType="thin-white-duke"
+                    label="TWD"
+                    clickHandler={switchTheme}
+                  />
+                </div>
+              </div>
+            </div>,
+            <div key={1}>
+              <div className="flex-col-center">
+                <p style={textStyle} className="selector-label">Select Length</p>
+                <div>
+                  <LengthSelector
+                    length="short"
+                    active={activeLength === "short"}
+                    clickHandler={this.changeLength}
+                    label="S"
+                  />
+                  <LengthSelector
+                    length="medium"
+                    active={activeLength === "medium"}
+                    clickHandler={this.changeLength}
+                    label="M"
+                  />
+                  <LengthSelector
+                    length="long"
+                    active={activeLength === "long"}
+                    clickHandler={this.changeLength}
+                    label="L"
+                  />
+                </div>
+              </div>
+            </div>,
+            <div key={2} className="full-width-box">
+              <GeneratorButton
+                label={this.state.buttonLabel}
+                submitHandler={this.submitHandler}
               />
             </div>
-          </div>
-        </div>,
-        <div key={1}>
-          <div className="flex-col-center">
-            <p className="selector-label">Select Era</p>
-            <div>
-              <EraSelector
-                active={activeEra === "ziggy-stardust"}
-                eraType="ziggy-stardust"
-                label="ZS"
-                clickHandler={this.changeEra}
-              />
-              <EraSelector
-                active={activeEra === "aladdin-sane"}
-                eraType="aladdin-sane"
-                label="AS"
-                clickHandler={this.changeEra}
-              />
-              <EraSelector
-                active={activeEra === "thin-white-duke"}
-                eraType="thin-white-duke"
-                label="TWD"
-                clickHandler={this.changeEra}
-              />
-            </div>
-          </div>
-        </div>,
-        <div key={2} className="full-width-box">
-          <GeneratorButton
-            label={this.state.buttonLabel}
-            submitHandler={this.submitHandler}
-          />
-        </div>
-      ]
+          ]
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }

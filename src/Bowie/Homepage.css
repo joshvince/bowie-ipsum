@@ -1,28 +1,28 @@
 @import './colors.css';
 
-#page-container {
+#content-container {
   width: 100%;
   max-width: 1000px;
+  min-height: 100vh;
   margin: 0;
-  background-color: var(--as-white);
+  transition: background-color 2s;
 }
 
 .headline {
   margin-top: 4em;
-  color: var(--as-dark-red);
+}
+
+h1, .subheader {
+  transition: color 2s;
 }
 
 h1 {
   font-size: 3em;
 }
 
-.highlight {
-  color: var(--as-dark-red);
-}
 
 @media only screen and (min-width: 768px) {
   h1 {
     font-size: 6em;
   }
-
 }

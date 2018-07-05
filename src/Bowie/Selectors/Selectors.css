@@ -33,6 +33,7 @@
 }
 
 .selector-label {
+  transition: color 2s;
   margin-bottom: 1em;
 }
 
@@ -40,13 +41,13 @@
 
 .length.selector {
   border: none;
-  color: var(--as-dark-red);
+  color: var(--as-blue);
 }
 
 .length.selector:hover, .length.selector:focus, .length.selector.selected {
   color: var(--as-white);
-  border-color: var(--as-dark-red);
-  background-color: var(--as-dark-red);
+  border-color: var(--as-light-blue);
+  background-color: var(--as-light-blue);
 }
 
 /* ERA SELECTORS */
@@ -60,8 +61,7 @@
 }
 
 .era.selector.aladdin-sane:focus, .era.selector.aladdin-sane:hover, .era.selector.aladdin-sane.selected {
-  color: var(--as-white);
-  background-color: var(--as-dark-red);
+  color: var(--as-red);
 }
 
 .era.selector.ziggy-stardust {
@@ -69,18 +69,27 @@
 }
 
 .era.selector.ziggy-stardust:focus, .era.selector.ziggy-stardust:hover, .era.selector.ziggy-stardust.selected {
-  background-color: yellow;
-  color: green;
+  transition: color 0.5s;
+  color: yellow;
 }
 
 .era.selector.thin-white-duke {
-  color: var(--as-black);
-  background-color: white;
+  text-shadow:
+		-1px -1px 0 var(--as-white),
+		1px -1px 0 var(--as-white),
+		-1px 1px 0 var(--as-white),
+		1px 1px 0 var(--as-white);
+  color: black;
 }
 
 .era.selector.thin-white-duke:focus, .era.selector.thin-white-duke:hover, .era.selector.thin-white-duke.selected {
+  transition: color 0.5s;
+  text-shadow:
+    -1px -1px 0 var(--as-black),
+    1px -1px 0 var(--as-black),
+    -1px 1px 0 var(--as-black),
+    1px 1px 0 var(--as-black);
   color: var(--as-white);
-  background-color: var(--as-black);
 }
 
 /* GENERATOR BUTTON */

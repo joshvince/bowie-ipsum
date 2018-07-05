@@ -1,22 +1,10 @@
 #lorem-container {
-  padding: 2em;
+  padding: 0 2em 2em 2em;
   width: 100%;
 }
 
 .lorem-text {
   margin-bottom: 1em;
-}
-
-.lorem-text.ziggy-stardust {
-  color: green;
-}
-
-.lorem-text.aladdin-sane {
-  color: var(--as-red);
-}
-
-.lorem-text.thin-white-duke {
-  color: var(--as-black);
 }
 
 ::selection {
@@ -42,21 +30,9 @@
   border: solid 2px;
 }
 
-.song.ziggy-stardust {
-  color: green;
-  border-color: green;
+.lorem-text, .song {
+  transition: color 2s;
 }
-
-.song.aladdin-sane {
-  color: var(--as-red);
-  border-color: var(--as-red);
-}
-
-.song.thin-white-duke {
-  color: var(--as-black);
-  border-color: var(--as-black);
-}
-
 
 .copy-button {
   height: 2.5em;

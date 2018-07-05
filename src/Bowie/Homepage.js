@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {ThemeContext} from '../theme-context';
 import Generator from '../Generator/Generator';
 
 import Selectors from './Selectors/Selectors';
@@ -39,28 +39,30 @@ class Homepage extends Component {
 
   render() {
     return (
-      <div id="page-container">
-        <div className="grid-container centered">
-          <div className="full-width-box headline">
-            <h1>Bowie Ipsum</h1>
+      <ThemeContext.Consumer>
+        {({theme}) => (
+          <div id="content-container" style={{backgroundColor: theme.alt}}>
+            <div className="grid-container centered">
+              <div className="full-width-box headline">
+                <h1 style={{color: theme.color}}>Bowie Ipsum</h1>
+              </div>
+              <div className="full-width-box">
+                <p className="subheader" style={{color: theme.color}}>
+                  A David Bowie themed Lorem Ipsum generator
+                </p>
+              </div>
+              <Selectors submitHandler={this.generateLorem}/>
+              <div ref={this.setLoremRef} className="full-width-box">
+                {this.state.showLorem ?
+                  <Lorem loremText={this.state.loremText} songList={this.state.loremSongs}/>
+                  :
+                  null
+                }
+              </div>
+            </div>
           </div>
-          <div className="full-width-box">
-            <p className="highlight">A David Bowie themed Lorem Ipsum generator</p>
-          </div>
-          <Selectors submitHandler={this.generateLorem}/>
-          <div ref={this.setLoremRef} className="full-width-box">
-            {this.state.showLorem ?
-              <Lorem
-                loremText={this.state.loremText}
-                songList={this.state.loremSongs}
-                era={this.state.era}
-              />
-              :
-              null
-            }
-          </div>
-        </div>
-      </div>
+        )}
+      </ThemeContext.Consumer>
     );
   }
 }
