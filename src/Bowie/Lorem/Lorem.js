@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import {ThemeContext} from '../../theme-context';
+
 import './Lorem.css';
 
 class Lorem extends Component {
@@ -45,25 +47,31 @@ class Lorem extends Component {
   render() {
     let btnClass = this.state.buttonLabel;
     return (
-      <div id="lorem-container">
-        <p ref={this.setClipboardTextRef} className={`lorem-text ${this.props.era}`}>
-          {this.props.loremText}
-        </p>
-        <div className="flex-col-end">
-          <div className="song-list">
-            {this.props.songList.map((song, i) => {
-              return (
-                <div key={i} className={`song catamaran ${this.props.era}`}>
-                  {song}
-                </div>
-              )
-            })}
+      <ThemeContext.Consumer>
+        {({theme}) => (
+          <div id="lorem-container">
+            <p
+              ref={this.setClipboardTextRef}
+              className="lorem-text"
+              style={{color: theme.color}}
+            >
+              {this.props.loremText}
+            </p>
+            <div className="flex-col-end">
+              <div className="song-list">
+                {this.props.songList.map((song, i) => (
+                  <div key={i} className="song catamaran" style={{color: theme.color}}>
+                    {song}
+                  </div>
+                ))}
+              </div>
+              <button className={`copy-button ${btnClass}`} onClick={this.copyToClipboard}>
+                {this.state.buttonLabel}
+              </button>
+            </div>
           </div>
-          <button className={`copy-button ${btnClass}`} onClick={this.copyToClipboard}>
-            {this.state.buttonLabel}
-          </button>
-        </div>
-      </div>
+        )}
+      </ThemeContext.Consumer>
     );
   }
 }
@@ -72,6 +80,5 @@ export default Lorem;
 
 Lorem.propTypes = {
   loremText: PropTypes.string,
-  songList: PropTypes.array,
-  era: PropTypes.string
+  songList: PropTypes.array
 }
