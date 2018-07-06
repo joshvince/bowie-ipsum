@@ -15,8 +15,8 @@ export const Themes = {
   },
   "ziggy-stardust": {
     "name": "ziggy-stardust",
-    alt: '#1f1b1d',
-    color: 'green'
+    alt: '#0A222D',
+    color: '#2BA8DA'
   },
   "thin-white-duke": {
     "name": "thin-white-duke",

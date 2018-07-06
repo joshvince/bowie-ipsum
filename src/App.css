@@ -23,10 +23,16 @@ p {
 }
 
 footer {
+  margin-top: 1em;
   width: 100%;
-  padding: 0.4em;
-  font-size: 1.4em;
+  height: 3em;
+  font-size: 1em;
+  line-height: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  transition: background-color 2s, color 2s;
 }
 
 footer a {

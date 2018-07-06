@@ -34,7 +34,7 @@
 
 .selector-label {
   transition: color 2s;
-  margin-bottom: 1em;
+  margin-bottom: 0.4em;
 }
 
 /* LENGTH SELECTORS */
@@ -48,12 +48,15 @@
   color: var(--as-white);
   border-color: var(--as-light-blue);
   background-color: var(--as-light-blue);
+  transition: color 0.3s, background-color 0.3s;
 }
 
 /* ERA SELECTORS */
 
 .era.selector {
   border: none;
+  font-size: 1.6em;
+  font-family: 'Didact Gothic', sans-serif;
 }
 
 .era.selector.aladdin-sane {
@@ -61,16 +64,17 @@
 }
 
 .era.selector.aladdin-sane:focus, .era.selector.aladdin-sane:hover, .era.selector.aladdin-sane.selected {
+  transition: color 0.5s;
   color: var(--as-red);
 }
 
-.era.selector.ziggy-stardust {
-  color: green;
+.era.selector.ziggy-stardust:hover {
+  color: #0A222D;
 }
 
-.era.selector.ziggy-stardust:focus, .era.selector.ziggy-stardust:hover, .era.selector.ziggy-stardust.selected {
+.era.selector.ziggy-stardust, .era.selector.ziggy-stardust:focus, .era.selector.ziggy-stardust.selected {
   transition: color 0.5s;
-  color: yellow;
+  color: #2BA8DA;
 }
 
 .era.selector.thin-white-duke {
@@ -83,7 +87,7 @@
 }
 
 .era.selector.thin-white-duke:focus, .era.selector.thin-white-duke:hover, .era.selector.thin-white-duke.selected {
-  transition: color 0.5s;
+  transition: color 0.5s, text-shadow 0.5s;
   text-shadow:
     -1px -1px 0 var(--as-black),
     1px -1px 0 var(--as-black),
@@ -102,7 +106,7 @@
   border: none;
   color: var(--as-white);
   background-color: var(--as-blue);
-  margin: 1em;
+  margin: 0.4em;
 }
 
 #generator-button:hover, #generator-button:focus {
