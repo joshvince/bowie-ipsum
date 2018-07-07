@@ -1,15 +1,15 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Bowie Ipsum",
+  "name": "Bowie Ipsum",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "favicon-180x180.png",
+      "sizes": "180x180 120x120 96x96 32x32 16x16",
       "type": "image/x-icon"
     }
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#BD211B",
   "background_color": "#ffffff"
 }
