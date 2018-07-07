@@ -11,7 +11,7 @@ const Footer = () => {
           className="catamaran"
           style={{color: theme.alt, backgroundColor: theme.color}}
         ><a href="http://joshvince.site">
-          Made with love by Josh. Please don't sue me, Ghost Bowie.
+          Made with love by Josh. <br/>Please don't sue me, Ghost Bowie.
         </a></footer>
       )}
     </ThemeContext>

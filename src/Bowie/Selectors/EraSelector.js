@@ -6,7 +6,7 @@ const EraSelector = ({eraType, active, label, clickHandler}) => {
   let activeClass = active ? "selected" : ""
   return (
     <button
-      className={`era selector ${eraType} square ${activeClass}`}
+      className={`era selector ${eraType} ${activeClass}`}
       onClick={e => clickHandler(eraType)}
     >
       {label}

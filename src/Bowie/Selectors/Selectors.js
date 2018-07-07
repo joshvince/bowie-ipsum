@@ -15,19 +15,8 @@ class Selectors extends Component {
     super(props)
     this.state = {
       numChars: 300,
-      selectedLength: "medium",
-      selectedEra: "aladdin-sane",
-      buttonLabel: this.findButtonLabel()
+      selectedLength: "medium"
     }
-  }
-
-  findButtonLabel = (val = "aladdin-sane") => {
-    const labels = {
-      "aladdin-sane": "Demand Billy Dolls",
-      "ziggy-stardust": "Play Guitar",
-      "thin-white-duke": "Throw Darts"
-    }
-    return labels[val]
   }
 
   changeLength = (newLength) => {
@@ -47,34 +36,8 @@ class Selectors extends Component {
     })
   }
 
-  changeEra = (newEra) => {
-    this.setState({
-      buttonLabel: this.findButtonLabel(newEra),
-      selectedEra: newEra
-    })
-  }
-
-  toggleRandom = () => {
-    let newVal = !this.state.random;
-    this.setState({
-      random: newVal
-    })
-  }
-
-  submitHandler = () => {
-    let payload = {
-      chars: this.state.numChars,
-      era: this.state.selectedEra
-    }
-    this.props.submitHandler(payload);
-    this.setState({
-      buttonLabel: "Ch-ch-ch Changes?"
-    })
-  }
-
   render() {
     let activeLength = this.state.selectedLength;
-    let activeEra = this.state.selectedEra;
     return (
       <ThemeContext.Consumer>
         {({theme, switchTheme}) => {
@@ -87,19 +50,19 @@ class Selectors extends Component {
                   <EraSelector
                     active={theme.name === "ziggy-stardust"}
                     eraType="ziggy-stardust"
-                    label="ZS"
+                    label="Ziggy"
                     clickHandler={switchTheme}
                   />
                   <EraSelector
                     active={theme.name === "aladdin-sane"}
                     eraType="aladdin-sane"
-                    label="AS"
+                    label="Aladdin"
                     clickHandler={switchTheme}
                   />
                   <EraSelector
                     active={theme.name === "thin-white-duke"}
                     eraType="thin-white-duke"
-                    label="TWD"
+                    label="The Duke"
                     clickHandler={switchTheme}
                   />
                 </div>
@@ -132,8 +95,10 @@ class Selectors extends Component {
             </div>,
             <div key={2} className="full-width-box">
               <GeneratorButton
-                label={this.state.buttonLabel}
-                submitHandler={this.submitHandler}
+                era={theme.name}
+                numChars={this.state.numChars}
+                submitHandler={this.props.submitHandler}
+                key={theme.name}
               />
             </div>
           ]
