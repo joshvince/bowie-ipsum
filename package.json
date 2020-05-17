@@ -2,7 +2,7 @@
   "name": "bowie",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://bowie.joshvince.site",
+  "homepage": "https://joshvince.github.io/bowie-ipsum/",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "prop-types": "^15.6.2",
